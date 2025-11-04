@@ -14,6 +14,7 @@ def get_main_menu_keyboard():
     buttons = [
         [InlineKeyboardButton(text="📝 Запись настроения", callback_data="record_mood")],
         [InlineKeyboardButton(text="📈 График настроения", callback_data="plot_of_mood")],
+        [InlineKeyboardButton(text="📅 Номер недели", callback_data="week_cnt")],
     ]
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 

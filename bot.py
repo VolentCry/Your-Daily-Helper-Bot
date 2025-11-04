@@ -10,7 +10,7 @@ from aiogram.types import Message
 from aiogram.client.default import DefaultBotProperties
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 # Импортируем все модули
-from modules import mood_tracker, weather, daily_words, daily_quotation
+from modules import mood_tracker, weather, daily_words, daily_quotation, week_cnt
 
 # --- Конфигурация и Логирование ---
 BOT_TOKEN = os.getenv("TOKEN")
@@ -33,6 +33,7 @@ async def main():
     dp.include_router(weather.router)
     dp.include_router(daily_words.router)
     dp.include_router(daily_quotation.router)
+    dp.include_router(week_cnt.router)
 
     @dp.message(CommandStart())
     async def send_welcome(message: Message):
